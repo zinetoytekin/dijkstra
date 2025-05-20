@@ -15,7 +15,8 @@ class Graph:
         self.edges[to_node].append((from_node, distance))  
 
 def dijkstra(graph, start):
-    distances = {node: float('inf') for node in graph.nodes}
+    distances = {node: float('inf') for node in graph}
+
     previous_nodes = {node: None for node in graph.nodes}
     distances[start] = 0
     queue = [(0, start)]
