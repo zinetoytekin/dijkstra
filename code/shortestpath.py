@@ -12,11 +12,10 @@ class Graph:
 
     def add_edge(self, from_node, to_node, distance):
         self.edges[from_node].append((to_node, distance))
-        self.edges[to_node].append((from_node, distance))  
+        self.edges[to_node].append((from_node, distance))  # Eğer yönsüz grafikse
 
 def dijkstra(graph, start):
-    distances = {node: float('inf') for node in graph}
-
+    distances = {node: float('inf') for node in graph.nodes}
     previous_nodes = {node: None for node in graph.nodes}
     distances[start] = 0
     queue = [(0, start)]
